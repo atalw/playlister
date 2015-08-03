@@ -1,3 +1,10 @@
+function pasted(channelId) {
+	console.log(channelId);
+	setTimeout(function() {
+		getPlaylistsFromChannelId(channelId.value);
+	}, 0);
+}
+
 function getPlaylistsFromChannelId(channelId) {
 	var div = document.getElementById("playlist");
 	var requestOptions = {

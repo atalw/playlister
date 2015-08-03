@@ -38,7 +38,12 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1 class="heading">Playlister</h1>
+			<div>
+				<h1 class="heading">Playlister</h1>
+			</div>
+			<div class="channelIDinput">
+				<input type="text" name="channelId" id="channelId" value="" placeholder="Enter channel ID" onPaste="pasted(this)"/>
+			</div>
 			<div class="playlists" id="playlists">
 				<div id="playlist" name="playlist"></div>
 			</div>
@@ -49,7 +54,7 @@
 			}
 		function onYouTubeApiLoad() {
 			gapi.client.setApiKey('AIzaSyDWs-d4hy2evnh8eyiz1npwhDocAK-hpcQ');
-			getPlaylistsFromChannelId("UC_G8WIObcI0_zg0W00_60dA");
+			//getPlaylistsFromChannelId("UC_G8WIObcI0_zg0W00_60dA");
 		}
 		</script>
 		<script src="https://apis.google.com/js/client.js?onload=load"></script>
