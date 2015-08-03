@@ -5,11 +5,40 @@ function pasted(channelId) {
 		getPlaylistsFromChannelId(channelId.value);
 	}, 0);
 }
+function handleAPILoaded() {
+	getPlaylists();
+}
 
 function getPlaylistsFromChannelId(channelId) {
 	var div = document.getElementById("playlist");
 	var requestOptions = {
 		channelId: channelId,
+		part: 'snippet',
+		maxResults: 50
+	};
+	var request = gapi.client.youtube.playlists.list(requestOptions);
+	request.execute(function(response) {
+		var entries = [];
+		var numberOfPlaylists = response.pageInfo.totalResults;
+		if(numberOfPlaylists == 0) {
+			div.innerHTML = "No public playlists";
+		}
+		for (var i=0; i<numberOfPlaylists-1; i++) {
+			document.getElementById("playlists").appendChild(div.cloneNode(true));
+		}
+		$.each(response.items, function(key, val) {
+			console.log(key);
+			var entry = {};
+			var playlistId = val.id;
+			var playlistTitle = val.snippet.title;
+			addPlaylistToElement(playlistId, playlistTitle, key);
+		});
+	});
+}
+function getPlaylists() {
+	var div = document.getElementById("playlist");
+	var requestOptions = {
+		mine: true,
 		part: 'snippet',
 		maxResults: 50
 	};

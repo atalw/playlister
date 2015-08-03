@@ -5,6 +5,8 @@
 		<script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js"></script>
 		<script type="text/javascript" src="playlistFunctions.js"></script>
 		<script type="text/javascript" src="initPlaylist.js"></script>
+		<script type="text/javascript" src="auth.js"></script>
+		<script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
 		<script src="http://www.jsviews.com/download/jsviews.js"></script>
 		<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="playlist.css" />
@@ -42,13 +44,17 @@
 				<h1 class="heading">Playlister</h1>
 				<h3 class="subheading">All your youtube playlists on one page</h3>
 			</div>
-			<div class="instructions">
-				<p>Go to your youtube account and click on <strong>my channel</strong> (top left). Copy <a href="http://i.imgur.com/zkcZznE.png" target="_blank">this</a> part of the url and paste it in the textbox below</p><h1>OR</h1><p>Go to <a href="https://support.google.com/youtube/answer/3250431?hl=en" target="_blank">this link</a> to get the channel ID.</p>
-				<p class="remember"><i>Remember, playlists need to be public for them to be  accessible.</i></p>
+			<!--<div class="instructions">-->
+				<!--<p>Go to your youtube account and click on <strong>my channel</strong> (top left). Copy <a href="http://i.imgur.com/zkcZznE.png" target="_blank">this</a> part of the url and paste it in the textbox below</p><h1>OR</h1><p>Go to <a href="https://support.google.com/youtube/answer/3250431?hl=en" target="_blank">this link</a> to get the channel ID.</p>-->
+				<!--<p class="remember"><i>Remember, playlists need to be public for them to be  accessible.</i></p>-->
+				<!--</div>-->
+			<div id="login-container" class="pre-auth">This application requires access to your YouTube account.
+				  Please <a href="#" id="login-link">authorize</a> to continue.
+				
 			</div>
-			<div class="channelIdInput">
-				<input type="text" name="channelId" id="channelIdBox" value="" placeholder="Enter channel ID" onPaste="pasted(this)"/>
-			</div>
+		   <!-- <div class="channelIdInput">-->
+				<!--<input type="text" name="channelId" id="channelIdBox" value="" placeholder="Enter channel ID" onPaste="pasted(this)"/>-->
+			<!--</div>-->
 			<div class="playlists" id="playlists">
 				<div id="playlist" name="playlist"></div>
 			</div>
