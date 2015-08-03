@@ -23,6 +23,11 @@ body {
 	color: white;
 	text-align: center;
 }
+.login {
+	width: 100%;
+	color: white;
+	text-align: center;
+}
 .channelIdInput {
 	width: 200px;
 	margin: auto;

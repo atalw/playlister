@@ -27,7 +27,6 @@ function getPlaylistsFromChannelId(channelId) {
 			document.getElementById("playlists").appendChild(div.cloneNode(true));
 		}
 		$.each(response.items, function(key, val) {
-			console.log(key);
 			var entry = {};
 			var playlistId = val.id;
 			var playlistTitle = val.snippet.title;
@@ -53,7 +52,6 @@ function getPlaylists() {
 			document.getElementById("playlists").appendChild(div.cloneNode(true));
 		}
 		$.each(response.items, function(key, val) {
-			console.log(key);
 			var entry = {};
 			var playlistId = val.id;
 			var playlistTitle = val.snippet.title;
