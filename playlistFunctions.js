@@ -16,6 +16,9 @@ function getPlaylistsFromChannelId(channelId) {
 	request.execute(function(response) {
 		var entries = [];
 		var numberOfPlaylists = response.pageInfo.totalResults;
+		if(numberOfPlaylists == 0) {
+			div.innerHTML = "No public playlists";
+		}
 		for (var i=0; i<numberOfPlaylists-1; i++) {
 			document.getElementById("playlists").appendChild(div.cloneNode(true));
 		}

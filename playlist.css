@@ -9,6 +9,19 @@ body {
 	text-align: center;
 	color: #cc181e;
 }
+.instructions {
+	width: 100%;
+	text-align: center;
+	color: white;
+}
+.channelIdInput {
+	width: 200px;
+	margin: auto;
+}
+#channelIdBox {
+	width: 200px;
+	height: 40px;
+}
 .playlists {
 	width: 100%;
 	min-height: 100vh;
