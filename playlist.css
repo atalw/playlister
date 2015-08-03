@@ -1,0 +1,98 @@
+body {
+	margin: 10px;
+	background-color: #171717;
+}
+.container {
+	width: 100%;
+}
+.heading {
+	text-align: center;
+	color: #cc181e;
+}
+.playlists {
+	width: 100%;
+	min-height: 100vh;
+	margin: auto;
+}
+.playListPlayer {
+	background: none repeat scroll 0 0 black;
+	display: block;
+	font-family: arial,sans-serif;
+	overflow: hidden;
+	height: 360px;
+	width: 640px;
+	float: left;
+	margin: 15px;
+}
+.playlistName {
+	color: white;
+	height: 40px;
+	border-bottom: 1px solid white;
+}
+.playListPlayerObject {
+	height: 360px;
+	width: 270px;
+	bottom: 0;
+	left: 0;
+	display: inline-block;
+	right: 300px;
+	top: 0;
+}
+.playListEntries {
+	bottom: 0;
+	height: 270px;
+	right: 0;
+	top: 0;
+	width: 365px;
+	overflow-y:scroll;
+	color: #ffffff;
+	font-size: 11px;
+}
+.playListControls {
+	width: 100%;
+	height: 30px;
+	color: #ffffff;
+	text-align: center;
+}
+.playListControl {
+	cursor: pointer;
+	padding: 10px;
+	border-top: 1px solid white;
+}
+.disabled {
+	cursor: default;
+	/*color: grey;*/
+}
+.playListEntry {
+	border-left: 2px solid black;
+	height: 35px;
+	cursor: pointer;
+	width: 100%;
+}
+.nowPlaying {
+	border-left: 2px solid #cc181e;
+	background-color: #333333;
+}
+.playListEntry:hover {
+	background-color: #393939;
+}
+.playListEntryDescription {
+	display: table;
+}
+.playlistEntryTitle {
+	font-size:13px;
+	padding-left: 15px;
+	display: table-cell;
+	vertical-align: middle;
+}
+.timeLink {
+	border: 1px solid transparent;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.timeLink:hover {
+	border: 1px solid red;
+}
+.randomizeActive {
+	color: #008110;
+}

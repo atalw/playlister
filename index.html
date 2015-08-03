@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title>Playlister</title>
+
+		<script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript" src="playlistFunctions.js"></script>
+		<script type="text/javascript" src="initPlaylist.js"></script>
+		<script src="http://www.jsviews.com/download/jsviews.js"></script>
+		<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="playlist.css" />
+		<script type="text/x-jsrender" id="playListPlayerTemplate">
+			<div id="{{:id}}playListPlayer" class="playListPlayer">
+				<div class="playListPlayerObject">
+					<object width="270" height="360" data="http://www.youtube.com/v/{{:entries[0].video_id}}?version=3&amp;enablejsapi=1&amp;playerapiid={{:id}}" id="{{:id}}" type="application/x-shockwave-flash">
+						<param value="always" name="allowScriptAccess">
+						<param value="true" name="allowFullScreen">
+					</object>
+				</div>
+				<div style="display:inline-block; vertical-align: top;">
+					<div class="playlistName"><h3>{{:playlistTitle}}</h3></div>
+					<div id="{{:id}}playListEntries" class="playListEntries">
+						{{for entries ~player_id=id}}
+							<div onclick="cueThisVideo('{{:~player_id}}', '{{:video_id}}');" class="playListEntry {{if #index == 0}} nowPlaying {{/if}}" id="{{:video_id}}">
+							   <div class="playListEntryDescription">
+								  <div class="playlistEntryTitle">{{:title}}</div>
+							   </div>
+							</div>
+						{{/for}}
+					</div>
+					<div class="playListControls">
+						<span id="{{:id}}Backward" class="playListControl disabled glyphicon glyphicon-backward" onclick="if(!$(this).hasClass('disabled')) {	loadPreviousVideo('{{:id}}')	}"></span>
+						<span id="{{:id}}Forward" class="playListControl glyphicon glyphicon-forward" onclick="if(!$(this).hasClass('disabled')) {	loadNextVideo('{{:id}}')	}"></span>
+						<span id="{{:id}}Random" class="playListControl glyphicon glyphicon-random" onclick="window['{{:id}}'].randomize();arrangePlayerControls('{{:id}}');"></span>
+					</div>
+				</div>
+			</div>
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="heading">Playlister</h1>
+			<div class="playlists" id="playlists">
+				<div id="playlist" name="playlist"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			function load() {
+				gapi.client.load('youtube', 'v3', onYouTubeApiLoad);
+			}
+		function onYouTubeApiLoad() {
+			gapi.client.setApiKey('AIzaSyDWs-d4hy2evnh8eyiz1npwhDocAK-hpcQ');
+			getPlaylistsFromChannelId("UC_G8WIObcI0_zg0W00_60dA");
+		}
+		</script>
+		<script src="https://apis.google.com/js/client.js?onload=load"></script>
+	</body>
+</html>
