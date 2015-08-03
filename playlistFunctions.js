@@ -1,5 +1,6 @@
 function pasted(channelId) {
-	console.log(channelId);
+	var parentdiv = document.getElementById("playlists");
+	parentdiv.innerHTML = "<div id='playlist' name='playlist'></div>";
 	setTimeout(function() {
 		getPlaylistsFromChannelId(channelId.value);
 	}, 0);
