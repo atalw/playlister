@@ -14,8 +14,8 @@
 			<div id="{{:id}}playListPlayer" class="playListPlayer">
 				<div class="playListPlayerObject">
 					<object width="270" height="360" data="http://www.youtube.com/v/{{:entries[0].video_id}}?version=3&amp;enablejsapi=1&amp;playerapiid={{:id}}" id="{{:id}}" type="application/x-shockwave-flash">
-						<param value="always" name="allowScriptAccess">
-						<param value="true" name="allowFullScreen">
+						<param name="allowScriptAccess" value="always">
+						<param name="allowFullScreen" value="true">
 					</object>
 				</div>
 				<div style="display:inline-block; vertical-align: top;">
@@ -41,14 +41,14 @@
 	<body>
 		<div class="container">
 			<div>
-				<h1 class="heading">Playlister</h1>
+				<h1 class="heading">Play<span style="color: #ffffff; font-weight: 200;">lister</span></h1>
 				<h3 class="subheading">All your youtube playlists on one page</h3>
 			</div>
 			<div class="instructions pre-auth">
 				<div id="login" class="login">This application requires access to your YouTube account.
 					Please <a onclick="googleApiClientReady()" id="login-link">authorize</a> to continue.
 				</div>
-				<h1>OR</h1><p>Go to your youtube account and click on <strong>my channel</strong> (top left). Copy <a href="http://i.imgur.com/zkcZznE.png" target="_blank">this</a> part of the url and paste it in the textbox below or go to <a href="https://support.google.com/youtube/answer/3250431?hl=en" target="_blank">this link</a> to get the channel ID.<br>You can also enter somebody else's channel ID and view their playlists.</p>
+				<h1>OR</h1><p>Go to your youtube account and click on <strong>my channel</strong> (top left). Copy <a href="http://i.imgur.com/zkcZznE.png" target="_blank">this</a> part of the url and paste it in the textbox below or go to <a href="https://support.google.com/youtube/answer/3250431?hl=en" target="_blank">this link</a> to get the channel ID.<br>You can also enter someone else's channel ID and view their playlists.</p>
 				<div class="channelIdInput">
 					<input type="text" name="channelId" id="channelIdBox" value="" placeholder="Enter channel ID" onPaste="pasted(this)"/>
 				</div>

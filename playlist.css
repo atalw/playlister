@@ -2,6 +2,7 @@ body {
 	margin: 10px;
 	background-color: #171717;
 	text-align: center;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 a:hover {
 	text-decoration: none;
@@ -12,10 +13,13 @@ a:hover {
 .heading {
 	text-align: center;
 	color: #cc181e;
+	font-size: 3.5em;
+	font-weight: 200;
 }
 .subheading {
 	text-align: center;
 	color: white;
+	font-weight: 200;
 }
 .instructions {
 	padding: 10px;
@@ -63,9 +67,11 @@ a:hover {
 	width: 640px;
 }
 .playlistName {
+	text-align: left;
 	color: white;
 	height: 40px;
-	border-bottom: 1px solid white;
+	font-weight: 100;
+	font-size: 2em;
 }
 .playListPlayerObject {
 	height: 360px;
@@ -85,6 +91,10 @@ a:hover {
 	overflow-y:scroll;
 	color: #ffffff;
 	font-size: 11px;
+	font-weight: 100;
+}
+.playlistEntries::-webkit-scrollbar {
+	display: none;
 }
 .playListControls {
 	width: 100%;
