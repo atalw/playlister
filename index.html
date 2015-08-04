@@ -48,7 +48,7 @@
 				<div id="login" class="login">This application requires access to your YouTube account.
 					Please <a onclick="googleApiClientReady()" id="login-link">authorize</a> to continue.
 				</div>
-				<h1>OR</h1><p>Go to your youtube account and click on <strong>my channel</strong> (top left). Copy <a href="http://i.imgur.com/zkcZznE.png" target="_blank">this</a> part of the url and paste it in the textbox below or go to <a href="https://support.google.com/youtube/answer/3250431?hl=en" target="_blank">this link</a> to get the channel ID.</p>
+				<h1>OR</h1><p>Go to your youtube account and click on <strong>my channel</strong> (top left). Copy <a href="http://i.imgur.com/zkcZznE.png" target="_blank">this</a> part of the url and paste it in the textbox below or go to <a href="https://support.google.com/youtube/answer/3250431?hl=en" target="_blank">this link</a> to get the channel ID.<br>You can also enter somebody else's channel ID and view their playlists.</p>
 				<div class="channelIdInput">
 					<input type="text" name="channelId" id="channelIdBox" value="" placeholder="Enter channel ID" onPaste="pasted(this)"/>
 				</div>
@@ -59,6 +59,9 @@
 
 			<div class="playlists" id="playlists">
 				<div id="playlist" name="playlist"></div>
+			</div>
+			<div class="footer">
+				<h4 class="footer-text"><a href="http://atalwar.com" target="_blank">Akshit Talwar</a></h4>
 			</div>
 		</div>
 		<script type="text/javascript">

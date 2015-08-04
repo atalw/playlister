@@ -1,6 +1,10 @@
 body {
 	margin: 10px;
 	background-color: #171717;
+	text-align: center;
+}
+a:hover {
+	text-decoration: none;
 }
 .container {
 	width: 100%;
@@ -45,6 +49,11 @@ body {
 	min-height: 100vh;
 	margin: auto;
 }
+#playlist {
+	float: left;
+	margin: auto;
+	padding: 25px;
+}
 .playListPlayer {
 	background: none repeat scroll 0 0 black;
 	display: block;
@@ -52,8 +61,6 @@ body {
 	overflow: hidden;
 	height: 360px;
 	width: 640px;
-	float: left;
-	margin: 15px;
 }
 .playlistName {
 	color: white;
@@ -126,4 +133,7 @@ body {
 }
 .randomizeActive {
 	color: #008110;
+}
+.footer-text  a {
+	text-align: center;
 }
