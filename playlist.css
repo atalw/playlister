@@ -19,6 +19,9 @@ body {
 	text-align: center;
 	color: white;
 }
+#login-link {
+	cursor: pointer;
+}
 .remember {
 	color: white;
 	text-align: center;
