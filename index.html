@@ -1,5 +1,7 @@
+<!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>Playlister</title>
 
 		<script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js"></script>
@@ -11,19 +13,14 @@
 		<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="playlist.css" />
 		<script type="text/x-jsrender" id="playListPlayerTemplate">
-			<div id="{{:id}}playListPlayer" class="playListPlayer" >
-				<div class="playListPlayerObject" onkeyup="vid('{{:id}}', event)">
-					<object width="270" height="360" data="http://www.youtube.com/v/{{:entries[0].video_id}}?version=3&amp;enablejsapi=1&amp;playerapiid={{:id}}" id="{{:id}}" type="application/x-shockwave-flash">
-						<param name="allowScriptAccess" value="always">
-						<param name="allowFullScreen" value="true">
-					</object>
-				</div>
-				<div class="data" onkeyup="vid('{{:id}}', event)">
+			<div id="{{:id}}playListPlayer" class="playListPlayer">
+				<div class="playListPlayerObject" id="{{:id}}" ></div>
+				<div class="data">
 					<div class="playlistName"><h3>{{:playlistTitle}}</h3></div>
 					<div id="{{:id}}playListEntries" class="playListEntries">
 						{{for entries ~player_id=id}}
 							<div onclick="cueThisVideo('{{:~player_id}}', '{{:video_id}}');" class="playListEntry {{if #index == 0}} nowPlaying {{/if}}" id="{{:video_id}}">
-							   <div class="playListEntryDescription"onkeyup="vid('{{:id}}', event)">
+							   <div class="playListEntryDescription">
 								  <div class="playlistEntryTitle">{{:title}}</div>
 							   </div>
 							</div>
@@ -50,11 +47,13 @@
 				</div>
 				<h1>OR</h1><p>Go to your youtube account and click on <strong>my channel</strong> (top left). Copy <a href="http://i.imgur.com/zkcZznE.png" target="_blank">this</a> part of the url and paste it in the textbox below or go to <a href="https://support.google.com/youtube/answer/3250431?hl=en" target="_blank">this link</a> to get the channel ID.<br>You can also enter someone else's channel ID and view their playlists.</p>
 				<div class="channelIdInput">
-					<input type="text" name="channelId" id="channelIdBox" value="" placeholder="Enter channel ID" onPaste="pasted(this)"/>
+					<input type="text" name="channelId" id="channelIdBox" value="" placeholder="Enter channel ID" onfocus="PASTE" onPaste="pasted(this)"/>
 				</div>
 			</div>
 			<div>
-				<p class="info"><i>Remember, playlists need to be public for them to be  accessible.</i><br><span class="shortcut">j</span> - next video |<span class="shortcut"> k</span> - previous video | <span class="shortcut">r</span> - toggle random</p>
+				<p class="info"><i>Remember, playlists need to be public for them to be  accessible.</i><br>
+					<!--<span class="shortcut">j</span> - next video |<span class="shortcut"> k</span> - previous video | <span class="shortcut">r</span> - toggle random-->
+				</p>
 			</div>
 
 			<div class="playlists" id="playlists">

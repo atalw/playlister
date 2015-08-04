@@ -52,11 +52,19 @@ a:hover {
 	width: 200px;
 	height: 40px;
 	text-align: center;
+	color: black;
 }
+
 .playlists {
 	width: 100%;
 	margin: auto;
 	overflow: auto;
+	color: white;
+	text-align: center;
+}
+.errorMessage {
+	font-size: 2em;
+	font-style: italic;
 }
 #playlist {
 	float: left;
