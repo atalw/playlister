@@ -9,6 +9,7 @@ a:hover {
 }
 .container {
 	width: 100%;
+	min-height: 100vh;
 }
 .heading {
 	text-align: center;
@@ -50,13 +51,13 @@ a:hover {
 }
 .playlists {
 	width: 100%;
-	min-height: 100vh;
 	margin: auto;
+	overflow: auto;
 }
 #playlist {
 	float: left;
 	margin: auto;
-	padding: 25px;
+	padding: 15px 25px 5px 25px;
 }
 .playListPlayer {
 	background: none repeat scroll 0 0 black;
@@ -144,6 +145,10 @@ a:hover {
 .randomizeActive {
 	color: #008110;
 }
-.footer-text  a {
+.footer {
+	padding-top: 20px;
+	width: 100%;
 	text-align: center;
+}
+.footer-text  a {
 }
