@@ -11,19 +11,19 @@
 		<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="playlist.css" />
 		<script type="text/x-jsrender" id="playListPlayerTemplate">
-			<div id="{{:id}}playListPlayer" class="playListPlayer">
-				<div class="playListPlayerObject">
+			<div id="{{:id}}playListPlayer" class="playListPlayer" >
+				<div class="playListPlayerObject" onkeyup="vid('{{:id}}', event)">
 					<object width="270" height="360" data="http://www.youtube.com/v/{{:entries[0].video_id}}?version=3&amp;enablejsapi=1&amp;playerapiid={{:id}}" id="{{:id}}" type="application/x-shockwave-flash">
 						<param name="allowScriptAccess" value="always">
 						<param name="allowFullScreen" value="true">
 					</object>
 				</div>
-				<div style="display:inline-block; vertical-align: top;">
+				<div class="data" onkeyup="vid('{{:id}}', event)">
 					<div class="playlistName"><h3>{{:playlistTitle}}</h3></div>
 					<div id="{{:id}}playListEntries" class="playListEntries">
 						{{for entries ~player_id=id}}
 							<div onclick="cueThisVideo('{{:~player_id}}', '{{:video_id}}');" class="playListEntry {{if #index == 0}} nowPlaying {{/if}}" id="{{:video_id}}">
-							   <div class="playListEntryDescription">
+							   <div class="playListEntryDescription"onkeyup="vid('{{:id}}', event)">
 								  <div class="playlistEntryTitle">{{:title}}</div>
 							   </div>
 							</div>
@@ -54,7 +54,7 @@
 				</div>
 			</div>
 			<div>
-				<p class="remember"><i>Remember, playlists need to be public for them to be  accessible.</i></p>
+				<p class="info"><i>Remember, playlists need to be public for them to be  accessible.</i><br><span class="shortcut">j</span> - next video |<span class="shortcut"> k</span> - previous video | <span class="shortcut">r</span> - toggle random</p>
 			</div>
 
 			<div class="playlists" id="playlists">

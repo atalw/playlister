@@ -31,9 +31,13 @@ a:hover {
 #login-link {
 	cursor: pointer;
 }
-.remember {
+.info {
 	color: white;
 	text-align: center;
+}
+.shortcut {
+	font-size: 2em;
+	color: #cc181e;
 }
 .login {
 	width: 100%;
@@ -67,13 +71,6 @@ a:hover {
 	height: 360px;
 	width: 640px;
 }
-.playlistName {
-	text-align: left;
-	color: white;
-	height: 40px;
-	font-weight: 100;
-	font-size: 2em;
-}
 .playListPlayerObject {
 	height: 360px;
 	width: 270px;
@@ -82,6 +79,18 @@ a:hover {
 	display: inline-block;
 	right: 300px;
 	top: 0;
+}
+.data {
+	display: inline-block;
+	vertical-align: top;
+	z-index: 9999;
+}
+.playlistName {
+	text-align: left;
+	color: white;
+	height: 40px;
+	font-weight: 100;
+	font-size: 2em;
 }
 .playListEntries {
 	bottom: 0;
@@ -110,7 +119,7 @@ a:hover {
 }
 .disabled {
 	cursor: default;
-	/*color: grey;*/
+	color: grey;
 }
 .playListEntry {
 	border-left: 2px solid black;

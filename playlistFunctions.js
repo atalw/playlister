@@ -81,7 +81,6 @@ function addPlaylistToElement(playlist_id, playlistTitle, key) {
 		});
 		window[player_id] = new YouTubePlayList(player_id, entries, playlistTitle);
 		var playListPlayer = $.templates("#playListPlayerTemplate");
-		//$('#playlist').html($('#playListPlayerTemplate').render(window[player_id]));
 		document.getElementsByName("playlist")[key].innerHTML = $('#playListPlayerTemplate').render(window[player_id]);
 	});
 }
@@ -108,6 +107,12 @@ function onYouTubePlayerReady(playerApiId) {
 function loadNextVideo(player_id) {
 	var currently_playing_video_id = window[player_id].getCurrentlyPlaying();
 	if(window[player_id].next()) {
+		loadVideoForPlayer(currently_playing_video_id, player_id);
+	}
+}
+function loadPreviousVideo(player_id) {
+	var currently_playing_video_id = window[player_id].getCurrentlyPlaying();
+	if(window[player_id].previous()) {
 		loadVideoForPlayer(currently_playing_video_id, player_id);
 	}
 }
@@ -144,4 +149,20 @@ function arrangePlayerControls(player_id) {
 			$('#' + player_id + 'Forward').removeClass('disabled');
 		}
 	}
+}
+function vid(id, event) {
+		switch(event.keyCode) {
+			case 74: 
+				event.preventDefault();
+				loadNextVideo(id);
+				return;
+			case 75:
+				event.preventDefault();
+				loadPreviousVideo(id);
+				return;
+			case 82:
+				event.preventDefault();
+				window[id].randomize();
+				arrangePlayerControls(id);
+		}
 }
