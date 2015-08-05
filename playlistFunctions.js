@@ -10,6 +10,7 @@ function pasted(channelId) {
 		getPlaylistsFromChannelId(channelId.value);
 	}, 0);
 }
+
 function handleAPILoaded() {
 	getPlaylists();
 }
@@ -121,9 +122,6 @@ function initVideoPlayer(playlist_id, video_id) {
 			}
 		})
 	}
-}
-
-function onYouTubeIframeAPIReady() { 
 }
 
 function cueThisVideo(player_id, video_id, time) {

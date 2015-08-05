@@ -4,13 +4,7 @@
 		<meta charset="utf-8">
 		<title>Playlister</title>
 
-		<script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js"></script>
-		<script type="text/javascript" src="playlistFunctions.js"></script>
-		<script type="text/javascript" src="initPlaylist.js"></script>
-		<script type="text/javascript" src="auth.js"></script>
-		<script src="https://apis.google.com/js/client.js"></script>
-		<script src="http://www.jsviews.com/download/jsviews.js"></script>
-		<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="playlist.css" />
 		<script type="text/x-jsrender" id="playListPlayerTemplate">
 			<div id="{{:id}}playListPlayer" class="playListPlayer">
@@ -37,7 +31,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<div>
+			<div class="top">
 				<h1 class="heading">Play<span style="color: #ffffff; font-weight: 200;">lister</span></h1>
 				<h3 class="subheading">All your youtube playlists on one page</h3>
 			</div>
@@ -50,12 +44,11 @@
 					<input type="text" name="channelId" id="channelIdBox" value="" placeholder="Enter channel ID" onfocus="PASTE" onPaste="pasted(this)"/>
 				</div>
 			</div>
-			<div>
+			<div class="information">
 				<p class="info"><i>Remember, playlists need to be public for them to be  accessible.</i><br>
 					<!--<span class="shortcut">j</span> - next video |<span class="shortcut"> k</span> - previous video | <span class="shortcut">r</span> - toggle random-->
 				</p>
 			</div>
-
 			<div class="playlists" id="playlists">
 				<div id="playlist" name="playlist"></div>
 			</div>
@@ -67,17 +60,22 @@
 			function load() {
 				gapi.client.load('youtube', 'v3', onYouTubeApiLoad);
 			}
-		function onYouTubeApiLoad() {
-			gapi.client.setApiKey('AIzaSyDWs-d4hy2evnh8eyiz1npwhDocAK-hpcQ');
-			//getPlaylistsFromChannelId("UC_G8WIObcI0_zg0W00_60dA");
-		}
+			function onYouTubeApiLoad() {
+				gapi.client.setApiKey('AIzaSyDWs-d4hy2evnh8eyiz1npwhDocAK-hpcQ');
+			}
 		</script>
 		<script src="https://apis.google.com/js/client.js?onload=load"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript" src="playlistFunctions.js"></script>
+		<script type="text/javascript" src="initPlaylist.js"></script>
+		<script type="text/javascript" src="auth.js"></script>
+		<script src="https://apis.google.com/js/client.js"></script>
+		<script src="http://www.jsviews.com/download/jsviews.js"></script>
 		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 		  ga('create', 'UA-65956589-1', 'auto');
 		  ga('send', 'pageview');
