@@ -9,7 +9,6 @@ function pasted(channelId) {
 		$('.pre-auth').hide();
 		getPlaylistsFromChannelId(channelId.value);
 	}, 0);
-
 }
 function handleAPILoaded() {
 	getPlaylists();
@@ -43,6 +42,7 @@ function getPlaylistsFromChannelId(channelId) {
 		});
 	});
 }
+
 function getPlaylists() {
 	var div = document.getElementById("playlist");
 	var requestOptions = {
@@ -68,6 +68,7 @@ function getPlaylists() {
 		});
 	});
 }
+
 function addPlaylistToElement(playlist_id, playlistTitle, key) {
 	var player_id = playlist_id;
 	var requestOptions = {
@@ -149,8 +150,8 @@ function loadVideoForPlayer(currently_playing_video_id, player_id, time) {
 	time = time || 0;
 	var video_id = window[player_id].getCurrentlyPlaying();
 	$('#' + currently_playing_video_id).removeClass('nowPlaying');
-		$('#' + video_id).addClass('nowPlaying');
-	//document.getElementById(player_id).loadVideoById(video_id, time, "large");
+	$('#' + video_id).addClass('nowPlaying');
+	$('#' + player_id + 'playListEntries').scrollTop($('#' + video_id).index() * 30);
 	player[player_id].loadVideoById(video_id, time, "medium");
 	arrangePlayerControls(player_id);
 }
