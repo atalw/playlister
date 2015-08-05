@@ -103,9 +103,11 @@ function initVideoPlayer(playlist_id, video_id) {
 			playlist: playlist_id,
 			controls: 2,
 			cc_load_policy: 0,
-			fs: 0,
 			iv_load_policy: 3,
 			enablejsapi: 1,
+			modestbranding: 1,
+			origin: 'http://playlister.atalwar.com',
+			rel: 0,
 		},
 		events: {
 			'onReady': onReady
