@@ -130,7 +130,6 @@ function cueThisVideo(player_id, video_id, time) {
 	window[player_id].setCurrentlyPlaying(video_id);
 	loadVideoForPlayer(currently_playing_video_id, player_id, time);
 }
-
 function loadNextVideo(player_id) {
 	var currently_playing_video_id = window[player_id].getCurrentlyPlaying();
 	if(window[player_id].next()) {
@@ -145,6 +144,7 @@ function loadPreviousVideo(player_id) {
 }
 
 function loadVideoForPlayer(currently_playing_video_id, player_id, time) {
+	window.tempor = player_id;
 	time = time || 0;
 	var video_id = window[player_id].getCurrentlyPlaying();
 	$('#' + currently_playing_video_id).removeClass('nowPlaying');
