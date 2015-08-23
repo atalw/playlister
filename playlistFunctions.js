@@ -70,7 +70,7 @@ function getPlaylists() {
 	});
 }
 
-function addPlaylistToElement(playlist_id, playlistTitle, key) {
+function addPlaylistToElement(playlist_id, playlistTitle, playlistNumber) {
 	var player_id = playlist_id;
 	var requestOptions = {
 		playlistId: playlist_id,
@@ -84,14 +84,13 @@ function addPlaylistToElement(playlist_id, playlistTitle, key) {
 			var entry = {};
 			video_id = val.snippet.resourceId.videoId;
 			entry.video_id = video_id;
-			entry.image_src = val.snippet.thumbnails.medium.url;
 			var title = val.snippet.title;
 			entry.title = title;
 			entries.push(entry);
 		});
 		window[player_id] = new YouTubePlayList(player_id, entries, playlistTitle);
 		var playListPlayer = $.templates("#playListPlayerTemplate");
-		document.getElementsByName("playlist")[key].innerHTML = $('#playListPlayerTemplate').render(window[player_id]);
+		document.getElementsByName("playlist")[playlistNumber].innerHTML = $('#playListPlayerTemplate').render(window[player_id]);
 		initVideoPlayer(playlist_id, entries[0].video_id);
 	});
 }
