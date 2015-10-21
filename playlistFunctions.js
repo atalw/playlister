@@ -65,22 +65,28 @@ function getPlaylists() {
 			var entry = {};
 			var playlistId = val.id;
 			var playlistTitle = val.snippet.title;
-			addPlaylistToElement(playlistId, playlistTitle, key);
+			var entries = [];
+			addPlaylistToElement(playlistId, playlistTitle, key, entries);
 		});
 	});
 }
 
-function addPlaylistToElement(playlist_id, playlistTitle, playlistNumber) {
+function addPlaylistToElement(playlist_id, playlistTitle, playlistNumber, entries, nextPageToken) {
 	var player_id = playlist_id;
 	var requestOptions = {
 		playlistId: playlist_id,
 		part: 'snippet',
 		maxResults: 50
 	};
+	if (nextPageToken) {
+		console.log("here");
+		requestOptions.pageToken = nextPageToken;
+	}
+	var nextPageToken;
 	var request = gapi.client.youtube.playlistItems.list(requestOptions);
 	request.execute(function(response) {
-		var entries = [];
 		$.each(response.items, function(key, val) {
+			nextPageToken = response.result.nextPageToken;
 			var entry = {};
 			video_id = val.snippet.resourceId.videoId;
 			entry.video_id = video_id;
@@ -88,10 +94,15 @@ function addPlaylistToElement(playlist_id, playlistTitle, playlistNumber) {
 			entry.title = title;
 			entries.push(entry);
 		});
-		window[player_id] = new YouTubePlayList(player_id, entries, playlistTitle);
-		var playListPlayer = $.templates("#playListPlayerTemplate");
-		document.getElementsByName("playlist")[playlistNumber].innerHTML = $('#playListPlayerTemplate').render(window[player_id]);
-		initVideoPlayer(playlist_id, entries[0].video_id);
+		if (nextPageToken) {
+			addPlaylistToElement(player_id, playlistTitle, playlistNumber, entries, nextPageToken);
+		}
+		else {
+			window[player_id] = new YouTubePlayList(player_id, entries, playlistTitle);
+			var playListPlayer = $.templates("#playListPlayerTemplate");
+			document.getElementsByName("playlist")[playlistNumber].innerHTML = $('#playListPlayerTemplate').render(window[player_id]);
+			initVideoPlayer(playlist_id, entries[0].video_id);
+		}
 	});
 }
 var player = {};
