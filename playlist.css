@@ -68,8 +68,9 @@ a:hover {
 }
 #playlist {
 	float: left;
-	margin: auto;
+	margin: 0 auto;
 	padding: 15px 25px 5px 25px;
+	width: 50%;
 }
 .playListPlayer {
 	background: none repeat scroll 0 0 black;
@@ -78,6 +79,7 @@ a:hover {
 	overflow: hidden;
 	height: 360px;
 	width: 640px;
+	margin: 0 auto;
 }
 .playListPlayerObject {
 	height: 360px;
@@ -170,3 +172,12 @@ a:hover {
 }
 .footer-text  a {
 }
+ ::-webkit-scrollbar {
+	 width: 15px;
+ }
+ ::-webkit-scrollbar-thumb {
+	 background-color: rgba(0,0,0,0.2);
+ }
+ ::-webkit-scrollbar-track {
+	 background-color: #75828E;
+ }
