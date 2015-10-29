@@ -79,7 +79,6 @@ function addPlaylistToElement(playlist_id, playlistTitle, playlistNumber, entrie
 		maxResults: 50
 	};
 	if (nextPageToken) {
-		console.log("here");
 		requestOptions.pageToken = nextPageToken;
 	}
 	var nextPageToken;
