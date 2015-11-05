@@ -39,7 +39,8 @@ function getPlaylistsFromChannelId(channelId) {
 			var entry = {};
 			var playlistId = val.id;
 			var playlistTitle = val.snippet.title;
-			addPlaylistToElement(playlistId, playlistTitle, key);
+			var entries = [];
+			addPlaylistToElement(playlistId, playlistTitle, key, entries);
 		});
 	});
 }
