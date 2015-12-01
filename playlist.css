@@ -20,7 +20,8 @@ a:hover {
 .subheading {
 	text-align: center;
 	color: white;
-	font-weight: 200;
+	font-weight: 100;
+	font-size: 1.2em;
 }
 .instructions {
 	padding: 10px;
@@ -40,6 +41,7 @@ a:hover {
 	color: #cc181e;
 }
 .login {
+	font-size: 1.5em;
 	width: 100%;
 	color: white;
 	text-align: center;
