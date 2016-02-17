@@ -108,7 +108,7 @@ function addPlaylistToElement(playlist_id, playlistTitle, playlistNumber, entrie
 var player = {};
 function initVideoPlayer(playlist_id, video_id) {
 	window.player[playlist_id] = new YT.Player(playlist_id, {
-		width: '270',
+		width: '360',
 		height: '360',
 		videoId: video_id,
 		playerVars: {

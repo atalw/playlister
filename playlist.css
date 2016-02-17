@@ -80,12 +80,12 @@ a:hover {
 	font-family: arial,sans-serif;
 	overflow: hidden;
 	height: 360px;
-	width: 640px;
+	width: 730px;
 	margin: 0 auto;
 }
 .playListPlayerObject {
 	height: 360px;
-	width: 270px;
+	width: 360px;
 	bottom: 0;
 	left: 0;
 	display: inline-block;
