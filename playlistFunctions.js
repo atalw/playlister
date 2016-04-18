@@ -159,7 +159,7 @@ function loadVideoForPlayer(currently_playing_video_id, player_id, time) {
 	var video_id = window[player_id].getCurrentlyPlaying();
 	$('#' + currently_playing_video_id).removeClass('nowPlaying');
 	$('#' + video_id).addClass('nowPlaying');
-	$('#' + player_id + 'playListEntries').scrollTop($('#' + video_id).index() * 30);
+	$('#' + player_id + 'playListEntries').scrollTop($('#' + video_id).index() * 35);
 	player[player_id].loadVideoById(video_id, time, "medium");
 	arrangePlayerControls(player_id);
 }
