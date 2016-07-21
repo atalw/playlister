@@ -1,4 +1,4 @@
-# playlister
+# playlister (deprecated - being rebuilt)
 ![screenshot](screenshot.jpg?raw=true)
 
 All your youtube playlists on a single page
